@@ -37,7 +37,22 @@ public class Customer {
     }
 
     public Customer(){
-
+        this("", null, "female",0);
     }
-    public Customer(String ID, String n, boolean s, int a){}
+    public Customer(String ID, String n, boolean s, int a){
+        if(s.equals("Male") || s.equals("male")){
+            this.sex = true;
+        }
+        else{
+            this.sex = false;
+        }
+        if(age < 0) {
+            this.age = 0;
+        }
+        else{
+            this.age = a;
+        }
+        this.name = n;
+        this.ID = ID;
+    }
 }
